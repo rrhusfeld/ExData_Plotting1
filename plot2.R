@@ -11,7 +11,7 @@ newhousehold_power_consumption <- household_power_consumption[which(household_po
 ##convert the Global acitve power from factor to numeric varabile
 newhousehold_power_consumption$Global_active_power <- as.numeric(as.character(newhousehold_power_consumption$Global_active_power))
 newhousehold_power_consumption$x <- paste (Date, Time)
-newhousehold_power_consumption$x <- as.Date(newhousehold_power_consumption$x)
+
 newhousehold_power_consumption$x <- strptime(newhousehold_power_consumption$x, "%Y-%m-%d %H:%M:%S")
 
 with(newhousehold_power_consumption, plot(x, Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab = ""))
